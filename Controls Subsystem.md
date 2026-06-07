@@ -1,1 +1,1 @@
-This is the official documentation for the controls subsystem in Project Kratos. We are mainly responsible for the [[Robotic Arm]] and the [[Life Detection Mechanism]]. 
+This is the official documentation for the controls subsystem in Project Kratos. We are mainly responsible for the [[Robotic Arm]] and the [[Life Detection Mechanism]].  hello lol
