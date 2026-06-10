@@ -285,17 +285,3 @@ milestone4-pid -> main
 5. Review and merge into `main`.
     
 
----
-
-# Recommended Workflow for Robotics Arm Project
-
-```text
-main
-├── milestone3-moveit
-├── milestone4-pid
-├── milestone5-genesis
-├── milestone6-hal
-└── milestone7-micro-ros
-```
-
-Develop each milestone in its own branch and merge into `main` when stable.
