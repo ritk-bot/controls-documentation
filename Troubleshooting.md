@@ -24,6 +24,7 @@
 	3. Command topic publication.
 	4. Robot pose and collision state.
 	
+	
 	- Verify controller activation using:
 	
 	```
