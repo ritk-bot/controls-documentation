@@ -1,10 +1,16 @@
 
 # 10th June 2026 Ritwik
 
-- Started designing a PID controller for Milestone 4.
-- modifying xacro to decide whether we wanna make a position controlled controller or an effort controlled one
-- decided to go for effort controlled arm since that would allow for the smoothest move to hardware 
-- Replaced command interface tags to effort in the xacro from position
+Started designing a PID controller for Milestone 4.
+
+
+Modifying xacro to decide whether we wanna make a position controlled controller or an effort controlled one
+
+
+Decided to go for effort controlled arm since that would allow for the smoothest move to hardware
+
+
+Replaced command interface tags to effort in the xacro from position
 
 ![](Assets/Screenshot%20from%202026-06-11%2001-18-58.png) 
 
