@@ -36,6 +36,13 @@ Transition the arm from position-controlled joints to effort-controlled joints u
 - Re-generated URDF from Xacro.
 - Rebuilt workspace and relaunched simulation.
 
+and then
+
+- Updated `controllers_pid.yaml`.
+- Added all arm joints to the `ForwardCommandController`.
+- Controller now accepts a 6-element effort vector.
+- Verified ros2_control effort interfaces are available and claimable.
+
 ### Verification
 
 Controller activation:
@@ -56,6 +63,5 @@ gripper_servo_joint/effort
 
 ### Outcome
 
-The arm's shoulder is now operating through effort interfaces rather than direct position commands.
-
-This establishes the foundation required for custom PID control development.
+- Arm control architecture now supports whole-arm torque commands.
+- Ready for development of the custom ROS 2 PID controller node
