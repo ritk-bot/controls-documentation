@@ -15,10 +15,10 @@
 
 ## Current Status
 
-Milestone 01 - Custom Arm URDF Development
-Milestone 02 - Gazebo and ros2_control Integration
-Milestone 03 - MoveIt Integration 
-Milestone 04 - PID Controller Development
-Milestone 05 - Genesis Integration
-Milestone 06 - Hardware Abstraction Layer
-Milestone 07 - STM32 / micro-ROS Backend
+- Milestone 01 - Custom Arm URDF Development
+- Milestone 02 - Gazebo and ros2_control Integration
+- Milestone 03 - MoveIt Integration 
+- Milestone 04 - PID Controller Development
+- Milestone 05 - Genesis Integration
+- Milestone 06 - Hardware Abstraction Layer
+- Milestone 07 - STM32 / micro-ROS Backend
