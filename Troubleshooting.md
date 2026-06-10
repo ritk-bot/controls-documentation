@@ -19,31 +19,31 @@
 
 - When debugging effort controllers, always verify:
 
-1. Controller activation.
-2. Interface claiming.
-3. Command topic publication.
-4. Robot pose and collision state.
-
-- Verify controller activation using:
-
-```
-ros2 control list_controllers
-```
-
-- Verify effort interfaces:
-
-```
-ros2 control list_hardware_interfaces
-```
-
-- Verify commands were reaching the controller:
-
-```
-ros2 topic echo /effort_controller/commands
-```
-
-- Check inertia values and joint limits.
-
-```
-ros2 topic echo /joint_states
-``` 
+	1. Controller activation.
+	2. Interface claiming.
+	3. Command topic publication.
+	4. Robot pose and collision state.
+	
+	- Verify controller activation using:
+	
+	```
+	ros2 control list_controllers
+	```
+	
+	- Verify effort interfaces:
+	
+	```
+	ros2 control list_hardware_interfaces
+	```
+	
+	- Verify commands were reaching the controller:
+	
+	```
+	ros2 topic echo /effort_controller/commands
+	```
+	
+	- Check inertia values and joint limits.
+	
+	```
+	ros2 topic echo /joint_states
+	``` 
