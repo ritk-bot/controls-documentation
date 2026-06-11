@@ -151,3 +151,6 @@ is what i want.
 
 We now have desired implementation and can use both teleop and moveit to control the arm urdf on gazebo.
 
+[Screencast from 2026-06-12 00-09-38.webm](https://github.com/user-attachments/assets/0bb79729-5386-4fbf-9f73-3859de4b2800)
+
+This is nice since it is proof that the higher level of our entire stack is done what is left is getting the hardware to do our bidding. 
