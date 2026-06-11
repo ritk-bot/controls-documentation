@@ -139,7 +139,7 @@ Steps:
 - Send a trajectory to the shoulder and elbow.
 - Watch it move without my PID node.
 
-	Teleop / Script
+	Teleop / Script/Moveit
         ↓
 JointTrajectoryController
         ↓
@@ -148,3 +148,6 @@ JointTrajectoryController
 	Gazebo 
 
 is what i want.
+
+We now have desired implementation and can use both teleop and moveit to control the rover on gazebo.
+
