@@ -155,3 +155,4 @@ We now have desired implementation and can use both teleop and moveit to control
 
 This is nice since it is proof that the higher level of our entire stack is done what is left is getting the hardware to do our bidding. 
 
+Whenever we make the joystick_arm.py we will need to use velocity commands for a smoother experience.
