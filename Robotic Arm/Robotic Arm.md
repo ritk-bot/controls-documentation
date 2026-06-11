@@ -11,7 +11,7 @@
 - [MoveIt](Robotic%20Arm/MoveIt/MoveIt.md)
 - [Genesis](Genesis.md)
 - [STM32 Integration](STM32%20Integration.md)
-- [Troubleshooting](Robotic%20Arm/Troubleshooting.md)
+- [Troubleshooting](Troubleshooting.md)
 - [Development Logs](Robotic%20Arm/Development%20Logs/Development%20Logs.md)
 - [Milestones](Robotic%20Arm/Milestones/Milestones.md)
 
