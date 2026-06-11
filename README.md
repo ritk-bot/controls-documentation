@@ -17,6 +17,9 @@ Documentation for the custom robotic arm and life detection mechanism.
 - [Robotic Arm](Robotic%20Arm/Robotic%20Arm.md)
 - [Life Detection Mechanism](Life%20Detection%20Mechanism/Life%20Detection%20Mechanism.md)
 
+# Purpose
+
+This repository serves as the central knowledge base for the Controls Subsystem and records the development process, architecture decisions, and lessons learned throughout subsystem development.
 
 # Git Branch Workflow
 
