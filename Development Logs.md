@@ -149,5 +149,5 @@ JointTrajectoryController
 
 is what i want.
 
-We now have desired implementation and can use both teleop and moveit to control the rover on gazebo.
+We now have desired implementation and can use both teleop and moveit to control the arm urdf on gazebo.
 
