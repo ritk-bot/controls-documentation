@@ -1,5 +1,5 @@
 # Development Logs
-
+Link to the logs folder-
 https://github.com/ritk-bot/controls-documentation/tree/main/Robotic%20Arm/Development%20Logs
 
 This section contains chronological records of development activities carried out by the Controls Team.
