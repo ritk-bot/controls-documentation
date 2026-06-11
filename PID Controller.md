@@ -9,15 +9,7 @@ Develop a reusable PID controller architecture for robotic arm joints.
 - Compatible with future STM32 integration.
 - Compatible with MoveIt trajectories.
 
-## Planned Architecture
-
-MoveIt/Joystick
-↓
-PID Controller
-↓
-ros2_control
-↓
-Simulator / Hardware
+## Planned Architecture 
 
 The custom package is of the architecture:
 
@@ -41,7 +33,7 @@ The PID eqn is:
 
 ![](Assets/Pasted%20image%2020260611150942.png)
 
-My first implementation of the PID node:
+### My first implementation of the PID node (For learning and only on shoulder joint):
 
 ```
 #!/usr/bin/env python3
@@ -339,7 +331,7 @@ Note:
 
 	This code is only for the shoulder joint for now.
 
-Code with changeable params:
+### Code with changeable params:
 
 ```
 #!/usr/bin/env python3
@@ -725,4 +717,226 @@ The following characteristics were monitored:
     
 
 The goal was to minimize overshoot and settling time while maintaining acceptable response speed.
+
+
+# Future Control Architecture
+
+## Motivation
+
+The custom Python PID controller was implemented to understand the fundamentals of feedback control, including proportional, integral and derivative action, overshoot, damping and steady-state error.
+
+While this approach is valuable for learning and prototyping, a larger robotic system benefits from separating high-level motion generation from low-level motor control.
+
+---
+
+## Layered Control Architecture
+
+The final robotic arm is expected to use a layered control structure.
+
+```text
+Joystick / MoveIt
+        ↓
+Trajectory Generation
+        ↓
+JointTrajectoryController
+        ↓
+STM32 Joint Controllers
+        ↓
+Motor Drivers
+        ↓
+Motors + Gearboxes
+        ↓
+Joint Encoders
+```
+
+Each layer has a specific responsibility.
+
+---
+
+## High-Level Control
+
+High-level control determines where the robot should move.
+
+Possible sources include:
+
+- Joystick teleoperation
+    
+- Keyboard teleoperation
+    
+- MoveIt motion planning
+    
+- Autonomous software
+    
+- Vision-based control
+    
+
+These systems do not command motor torque directly.
+
+Instead, they generate desired joint positions or trajectories.
+
+Example:
+
+```text
+Shoulder Joint = 0.5 rad
+Elbow Joint = -0.3 rad
+```
+
+---
+
+## JointTrajectoryController
+
+The JointTrajectoryController is responsible for trajectory execution.
+
+Its responsibilities include:
+
+- Interpolating between target positions
+    
+- Generating smooth motion
+    
+- Synchronizing multiple joints
+    
+- Enforcing timing constraints
+    
+
+For example, a command such as:
+
+```text
+Move shoulder from 0.3 rad to 0.5 rad in 1 second
+```
+
+may internally become:
+
+```text
+0.30
+0.32
+0.34
+0.36
+0.38
+0.40
+...
+0.50
+```
+
+The controller continuously produces intermediate setpoints that define the desired trajectory.
+
+Importantly, the JointTrajectoryController does not directly control motor torque.
+
+---
+
+## Embedded Joint Controllers
+
+The STM32 is responsible for low-level control.
+
+For each joint:
+
+```text
+Desired Position
+       ↓
+Position Error
+       ↓
+PID Controller
+       ↓
+Motor Command
+       ↓
+Motor + Gearbox
+       ↓
+Encoder Feedback
+```
+
+The encoder provides the current joint position.
+
+The PID controller calculates the error between the desired position and measured position and generates the required motor command.
+
+This process executes continuously at a high frequency.
+
+---
+
+## Example: Shoulder Joint Motion
+
+Assume the shoulder is currently at:
+
+```text
+0.30 rad
+```
+
+The operator pushes the joystick forward.
+
+The teleoperation node requests:
+
+```text
+0.50 rad
+```
+
+The JointTrajectoryController generates intermediate setpoints:
+
+```text
+0.32
+0.34
+0.36
+...
+0.50
+```
+
+The STM32 receives the current desired position and computes:
+
+```text
+error = desired_position - measured_position
+```
+
+The PID controller then drives the motor until the measured position matches the desired position.
+
+---
+
+## Velocity-Based Teleoperation
+
+For teleoperation, joystick axes naturally correspond to velocity commands rather than absolute positions.
+
+Example:
+
+```text
+Joystick Forward
+→ Shoulder Velocity = +0.3 rad/s
+```
+
+The teleoperation node integrates velocity into position targets:
+
+```text
+target_position += velocity × dt
+```
+
+This produces smooth continuous motion while still using the same trajectory execution and low-level control infrastructure.
+
+---
+
+## Relationship Between PID and JointTrajectoryController
+
+The JointTrajectoryController and PID controller solve different problems.
+
+JointTrajectoryController:
+
+- Determines where the joint should be at a given time.
+    
+- Handles trajectory timing and synchronization.
+    
+
+PID Controller:
+
+- Ensures the physical joint reaches the desired position.
+    
+- Compensates for disturbances, gravity and model inaccuracies.
+    
+
+Therefore:
+
+```text
+JointTrajectoryController
+        =
+Trajectory Execution
+
+PID Controller
+        =
+Motor Control
+```
+
+Both layers are required for a complete robotic manipulation system.
 

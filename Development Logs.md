@@ -107,13 +107,13 @@ koro@victus:~/ros2_ws/src$ ros2 param dump /pid_controller
 
 
 I just got done learning PID now I'll be using the ros2_control method of implementing a PID controller where.
-Instead of your YAML:
+Instead of my YAML:
 
 ```
 effort_controller:  type: forward_command_controller/ForwardCommandController
 ```
 
-you might use:
+I will use:
 
 ```
 shoulder_controller:  type: pid_controller/PidController
@@ -130,3 +130,21 @@ gains:  shoulder_joint:    p: 35.0    i: 0.1    d: 1.1
 No custom Python node.
 
 The controller i have made will help me while guiding inductees to make the hardware controller. 
+
+Now we will be making a position controlled arm with ros2_control and JointTrajectoryController as the controller in my YAML
+Steps:
+- Change the URDF/Xacro command interfaces.
+- Create a `JointTrajectoryController` YAML.
+- Spawn the controller.
+- Send a trajectory to the shoulder and elbow.
+- Watch it move without my PID node.
+
+	Teleop / Script
+        ↓
+JointTrajectoryController
+        ↓
+	ros2_control
+        ↓
+	Gazebo 
+
+is what i want.
