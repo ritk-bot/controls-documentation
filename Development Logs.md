@@ -81,3 +81,52 @@ Problems with the first implementation:
 The shoulder oscillates a lot.
 
 [Screencast from 2026-06-11 15-33-12.webm](https://github.com/user-attachments/assets/2cbc2480-d6bb-4c2d-823d-2ba24f1edd96)
+
+So we change our gains
+```
+self.kp = 5.0
+
+self.ki = 0.0
+
+self.kd = 2.0
+```
+
+The guide to tuning is in [PID Controller](PID%20Controller.md). Today i just tuned the shoulder joint and the params on my dummy arm were:
+```
+koro@victus:~/ros2_ws/src$ ros2 param dump /pid_controller
+/pid_controller:
+  ros__parameters:
+    kd: 1.1
+    ki: 0.3
+    kp: 9.0
+    start_type_description_service: true
+    target: 0.3
+    use_sim_time: false
+
+```
+
+
+I just got done learning PID now I'll be using the ros2_control method of implementing a PID controller where.
+Instead of your YAML:
+
+```
+effort_controller:  type: forward_command_controller/ForwardCommandController
+```
+
+you might use:
+
+```
+shoulder_controller:  type: pid_controller/PidController
+```
+
+or a trajectory controller.
+
+Then configure gains:
+
+```
+gains:  shoulder_joint:    p: 35.0    i: 0.1    d: 1.1
+```
+
+No custom Python node.
+
+The controller i have made will help me while guiding inductees to make the hardware controller. 
