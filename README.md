@@ -19,7 +19,7 @@ Documentation for the custom robotic arm and life detection mechanism.
 
 # Purpose
 
-This repository serves as the central knowledge base for the Controls Subsystem and records the development process, architecture decisions, and lessons learned throughout subsystem development.
+This repository serves as the central knowledge base for Project Kratos' Controls Subsystem and records the development process, architecture decisions, and lessons learned throughout subsystem development.
 
 # Git Branch Workflow
 
