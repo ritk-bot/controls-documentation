@@ -3,17 +3,13 @@
 
 ## Documentation
 
-- [URDF](URDF.md)
-- [Architecture](Robotic%20Arm/Architecture/Architecture.md)
-- [Gazebo](Robotic%20Arm/Gazebo/Gazebo.md)
-- [ros2_control](ros2_control.md)
-- [PID Controller](Robotic%20Arm/Controls/PID%20Controller.md)
-- [MoveIt](Robotic%20Arm/MoveIt/MoveIt.md)
-- [Genesis](Genesis.md)
-- [STM32 Integration](STM32%20Integration.md)
+- [Architecture](Architecture/Architecture.md)
+- [PID Controller](Controls/PID%20Controller.md)
+- [Development Logs](Development%20Logs/Development%20Logs.md)
+- [Gazebo](Gazebo/Gazebo.md)
+- [Milestones](Milestones/Milestones.md)
+- [MoveIt](MoveIt/MoveIt.md)
 - [Troubleshooting](Troubleshooting.md)
-- [Development Logs](Robotic%20Arm/Development%20Logs/Development%20Logs.md)
-- [Milestones](Robotic%20Arm/Milestones/Milestones.md)
 
 
 ## Current Status
