@@ -1,6 +1,6 @@
 # Controls Documentation
 
-Documentation for the custom robotic arm project.
+Documentation for the custom robotic arm and life detection mechanism.
 
 ## Current Progress on the Arm
 
