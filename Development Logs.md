@@ -80,4 +80,4 @@ Problems with the first implementation:
 
 The shoulder oscillates a lot.
 
-![](Assets/Screencast%20from%202026-06-11%2015-33-12.webm)
+[Screencast from 2026-06-11 15-33-12.webm](https://github.com/user-attachments/assets/2cbc2480-d6bb-4c2d-823d-2ba24f1edd96)
