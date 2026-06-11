@@ -10,7 +10,6 @@ Each milestone represents a major engineering objective and records the progress
 
 ### Milestone 1 — Custom Arm URDF Development
 [Milestone 01](Milestone%2001.md)
-
 Objectives:
 
 - Design robot structure
