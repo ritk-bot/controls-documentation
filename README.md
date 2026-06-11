@@ -2,7 +2,7 @@
 
 Documentation for the custom robotic arm and life detection mechanism.
 
-## Current Progress on the Arm
+# Current Progress on the Arm
 
 - [x] Milestone 01 - Arm Modeling
 - [x] Milestone 02 - Gazebo + ros2_control
@@ -12,7 +12,7 @@ Documentation for the custom robotic arm and life detection mechanism.
 - [ ] Milestone 06 - Hardware Abstraction Layer
 - [ ] Milestone 07 - STM32 + micro-ROS
 
-## Documentation
+# Documentation
 
 - [Robotic Arm](Robotic%20Arm/Robotic%20Arm.md)
 - [Life Detection Mechanism](Life%20Detection%20Mechanism/Life%20Detection%20Mechanism.md)
