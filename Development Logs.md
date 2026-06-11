@@ -65,3 +65,19 @@ gripper_servo_joint/effort
 
 - Arm control architecture now supports whole-arm torque commands.
 - Ready for development of the custom ROS 2 PID controller node
+
+## 11th June 2026 Ritwik
+
+Started work on PID controller. Made a new package arm_pid_controller. I will first be targetting only one joint (shoulder joint) and then extend to others.
+
+Made the PID node executable and then built the package.
+
+So the PID eqn is:
+
+![](Assets/Pasted%20image%2020260611150903.png)
+
+Problems with the first implementation: 
+
+The shoulder oscillates a lot.
+
+![](Assets/Screencast%20from%202026-06-11%2015-33-12.webm)
