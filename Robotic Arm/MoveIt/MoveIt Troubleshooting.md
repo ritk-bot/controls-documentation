@@ -12,3 +12,15 @@ I did not add the use_sim_time commands in the launch because that would require
 ros2 param set /robot_state_publisher use_sim_time true
 ros2 param set /move_group use_sim_time true
 ```
+
+# YAML Issues
+
+YAMLs are case sensitive pls check even small spaces like 
+```
+-gripper 
+```
+rather than 
+```
+- gripper
+```
+can cause errors.

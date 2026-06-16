@@ -92,3 +92,15 @@ and checking /clock and seeing whether it has any publishers:
 ```
 ros2 topic info /clock
 ```
+
+# YAML Issues 
+
+YAMLs are case sensitive pls check even small spaces like 
+```
+-gripper 
+```
+rather than 
+```
+- gripper
+```
+can cause errors.
