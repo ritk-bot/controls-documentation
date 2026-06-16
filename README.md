@@ -256,3 +256,16 @@ milestone4-pid -> main
 
 5. Review and merge into `main`.
     
+# Restore Files and Check Differences
+
+To restore a certain file to the version on github
+
+```
+git restore <path_to_file>
+```
+
+and to check the differences of the current file from the last pushed commit
+
+```
+git diff <path_to_file>
+```
