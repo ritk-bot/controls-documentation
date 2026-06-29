@@ -1,88 +1,78 @@
-# Week 3
-## Instructions
-### ROS2 Basics 
-For Q1, Q2 and bonus questions your src shoulf follow the following structure.
-#### Expected Package Structure
-Question 1
+# Week 3 - IK/FK and Transforms
 
-Your workspace should contain the following package:
+## Question 1
 
-ros2_ws/
-└── src/
-    └── kratos_<your_name>/
-        ├── CMakeLists.txt
-        ├── package.xml
-        ├── src/
-        │   ├── rover_status_publisher.cpp or .py
-        │   └── rover_status_subscriber.cpp or .py
-        ├── launch/                 (Bonus)
-        │   └── bringup.launch.py
-        └── ...
+Question 1 is a pen-and-paper question. Upload your scanned solution to **Google Classroom**.
 
-Question 2
+---
 
-Create a second package for your custom message in bonus question.
+## Question 2
 
-ros2_ws/
-└── src/
-    ├── kratos_<your_name>/
-    │   ├── CMakeLists.txt
-    │   ├── package.xml
-    │   ├── src/
-    │   │   ├── rover_status_msg_publisher.cpp or .py
-    │   │   └── rover_status_msg_subscriber.cpp or .py
-    │   ├── launch/                 (Bonus)
-    │   │   └── bringup.launch.py
-    │   └── ...
-    │
-    └── kratos_<your_name>_msgs/
-        ├── CMakeLists.txt
-        ├── package.xml
-        ├── msg/
-        │   └── RoverStatus.msg
-        └── ...
+Use the provided **arm_humble** package.
 
-Replace <your_name> with your own name.
+Do **not** rename the package or modify its overall directory structure unless absolutely necessary.
 
-### IKFK and Transforms 
+### Expected Package Structure
 
-Q1 is a pen and paper question the answer to which is to be uploaded on Google Classroom.
-
-For Q2, use the provided arm_humble package without changing its overall directory structure.
-
-Your final package should resemble the following:
-
+```text
 arm_humble/
 ├── launch/
 ├── rviz/
 ├── urdf/
 ├── scripts/
-│   └── <script_name>.py
+│   └── ik_controller.py
 ├── CMakeLists.txt
 ├── package.xml
 └── ...
+```
 
-Requirements
-Create a new scripts/ directory.
-Place your ROS2 node inside the scripts/ directory.
-Modify CMakeLists.txt so that your Python node is installed correctly. I have commented the required code block which you can comment out and edit.
-If your implementation introduces additional dependencies, update package.xml accordingly.
-Do not rename the package or modify the provided directory structure unless absolutely necessary. If necessary document such a change in your own repository's README.md.
+### Requirements
 
-## Documentation Requirements
+- Create a new `scripts/` directory.
+- Place your ROS2 node inside the `scripts/` directory.
+- Modify `CMakeLists.txt` so your Python node is installed correctly.
+- If additional ROS dependencies are required, update `package.xml`.
+- Do not rename the package.
 
-Robotics projects are collaborative by nature. Your code should be understandable to another developer without requiring verbal explanations.
-### Code Documentation
-- Every custom function must include an appropriate docstring.
-- Variable and function names should be descriptive.
-### Development Documentation
+---
 
-Include a `README.md` in your repository describing:
+# Documentation Requirements
+
+Your repository should demonstrate **both** a working solution and a clear engineering process.
+
+## Code Documentation
+
+Every custom function **must** contain an appropriate docstring.
+
+Example:
+
+```python
+def inverse_kinematics(x, y):
+    """
+    Computes the shoulder and elbow joint angles required
+    to reach a target end-effector position.
+
+    Args:
+        x (float): Target x coordinate.
+        y (float): Target y coordinate.
+
+    Returns:
+        tuple: (shoulder_angle, elbow_angle)
+    """
+```
+
+## Repository Documentation
+
+Your repository must contain a `README.md` describing:
 
 - Your approach to solving the problem.
 - Any assumptions you made.
-- Challenges encountered during implementation.
-- How you tested your solution.
-- Any known limitations or improvements you would make given more time.
+- Challenges encountered.
+- How you tested your implementation.
+- Any known limitations.
 
-This README is intended to demonstrate your engineering thought process rather than simply present the final solution.
+## Commit History
+
+Commit your work regularly.
+
+Avoid submitting your entire solution in a single commit.
