@@ -75,3 +75,14 @@ Robotics projects are collaborative by nature. Your code should be understandabl
 ### Code Documentation
 - Every custom function must include an appropriate docstring.
 - Variable and function names should be descriptive.
+### Development Documentation
+
+Include a `README.md` in your repository describing:
+
+- Your approach to solving the problem.
+- Any assumptions you made.
+- Challenges encountered during implementation.
+- How you tested your solution.
+- Any known limitations or improvements you would make given more time.
+
+This README is intended to demonstrate your engineering thought process rather than simply present the final solution.
